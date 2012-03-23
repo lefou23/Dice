@@ -1,0 +1,51 @@
+DICE
+Dice Integer Creation Engine
+
+Intended as a code library for various kinds of dice, including "special" dice:
+* Standard geometric solids, [1, MAX_INT] number of sides
+* Fudge dice - three sided dice with plus, blank and minus faces
+* Shadow dice - six sided dice which re-roll on a 6, adding to the previous roll
+* Success dice - six sided dice which generate a "success" 1/3 and a "fail" 1/6
+
+Also includes Dice Group classes, to simulate rolling many dice at once:
+* Roll (randomize) all dice in group simultaneously
+* Total all face values
+* Test for x of a kind (x supplied by client)
+* Test for a run of x consecutive values (x supplied by client)
+* Test for full house (simultaneous pair and three of a kind)
+* Test for maximum width (largest number of matching faces, minimum of a pair)
+* Test for maximum height (highest value of matching faces)
+
+
+This project takes advantage of CMake (www.cmake.org), a
+cross platform makefile builder. Once you have CMake installed, building the
+project is a breeze. The code from this project does not require CMake.
+
+Using the terminal, navigate to the directory where this README is.
+To make this project, create a build directory.
+
+$ mkdir build
+
+Move to the build directory.
+
+$ cd build/
+
+Run the "run_it.sh" script in the scripts folder.
+The script will launch CMake.
+CMake will create various files and directories, including the Makefile.
+Then make will build the binary.
+Finally the script will launch the binary, with some default command line arguements.
+
+$ ../scripts/run_it.sh
+
+
+After making any code changes to the project, run the "run_it.sh" script as before.
+It will rerun CMake, delete any binaries, make the project.
+If there are errors, make will report them as expected.
+Otherwise, the binary will build and launch, again with the default command line arguments.
+
+
+When done, run "clean.sh" in the scripts folder.
+It will delete all files in the build directory.
+
+$ ../scripts/clean.sh
